@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<meta content="text/html; charset=UTF-8" http-equiv="content-type">
+		<title> IEEE 754</title>
+		<link href="CSS/monFichierCSS.css" type="text/css" rel="stylesheet" media="screen">
+		<SCRIPT  type="text/javascript" SRC="javascript/monFichierJavascript.js"> </SCRIPT>
+		<link rel="icon"  href="image/coffe.png" />
+	</head>
+	
+	<body>
+		<div id="bloc1"><h1>La norme IEEE 754</h1>
+			<input type="input" name="signe" class="entree" placeholder="Signe..." id="signe"></input>
+			<input type="input" name="exposant" class="entree" placeholder="Exposant..."  id="exposant"></input>
+			<input type="input" name="mantisse" class="entree" placeholder="Mantisse..."  id="mantisse"></input></br>
+			<input type="button" name="verifier"  class="bouton" value="Verifier"  id="verifierbinaire"></input>
+			<input type="button" name="calculer"  class="bouton" value="Calculer"  id="calculer"></input>
+			<div class="bloc" id="resultatexposant" ></div>
+			<div class="bloc" id="resultatmantisse" ></div>
+			<div class="bloc" id="resultatiee" ></div>
+		</div>
+		<h3>Qu'est ce que la norme IEE 754 ?</h3>
+		<div id="bloc2" > 
+			<p>L’IEEE 754 est une norme pour la représentation des nombres à virgule flottante en binaire. Elle est la norme la plus employée actuellement pour le calcul des nombres à virgule flottante dans le domaine informatique, avec les CPU et les FPU. La norme définit les formats de représentation des nombres à virgule flottante (signe, mantisse, exposant, nombres dénormalisés) et valeurs spéciales (infinis et NaN), en même temps qu’un ensemble d’opérations sur les nombres flottants.</p>
+			<p>Un nombre binaire à virgule flottante est stocké dans un mot de 32 bits : 1 bit de signe (ici en jaune), où le 0 renvoie un "+" tandis qu'un 1, un "-" , 8 bits pour l'exposant(en vert et 23 pour la mantisse(en bleu).
+			</p>
+			<img src="image/ieee.png" width="30%" style="margin-left: 30%; margin-right: 30%;"></img></br>
+			<h3 style="margin-left: -5%;">Comment la calculer ?</h3>
+			<p>L'exposant codé sur 8 bits, c'est a dire qu'il comprend 2<sup>8</sup> valeurs, 256 valeurs, on l'obtient en soustrayant 256 par le biais (qui est egal a 127) pour obtenir l'intervalle de valeurs [-127,128] qui nous permet de saisir des nombres allant de 10<sup>-38</sup> à 10<sup>38</sup> </p>
+			<p>La mantisse elle se lit de la gauche vers la droite, elle comprend des valeurs allant de  2<sup>-1</sup> à 2<sup>-23</sup>. Le premier bit (que nous appelerons rang) comprend 2<sup>-1</sup> valeurs, le second 2<sup>-2</sup>, le 3<sup>ème</sup>, 2<sup>-3</sup> en terme la mantisse est la somme des  2<sup>-le rang</sup> seulement si la valeur correspondant au rang est un 1 sinon (si elle est égal à 0) nous passons au rang suivant </p>
+			<p>La représentation des nombres à virgule flottante en binaire par la norme IEEE 754 est simplement la multiplication de l'exposant par la mantisse.</br></p>
+				<p style="margin-left: 3%;">IEEE 754 = Signe + Exposant * Mantisse</p>
+		</div>
+	</body>
+
+</html>
